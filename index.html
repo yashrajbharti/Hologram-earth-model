@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script
+    src="https://cdn.rawgit.com/tizzle/aframe-orbit-controls-component/v0.1.14/dist/aframe-orbit-controls-component.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+   <div id='earthcontainer' style='position:relative; display:flex; width: 100%; justify-content:center ;'><a-scene embedded='true' loading-screen='enabled:false' renderer='antialias: true;   colorManagement: true;   sortObjects: true;   physicallyCorrectLights: true;   maxCanvasWidth: 1920;   maxCanvasHeight: 1920;' style='position:absolute; height: 450px; width: 450px;  margin: 0 auto;' vr-mode-ui='enabled: false'>
+    <a-assets>
+      <a-asset-item id='candle' src='https://raw.githubusercontent.com/yashrajbharti/kml-images/main/scene/scene.gltf'/>
+    </a-assets>
+
+    <a-entity camera='fov: 80; zoom: 1;' id='camera' mouse-cursor='' orbit-controls='             enableZoom: false;                       autoRotate: true;             target: #target;             enableDamping: true;             dampingFactor: 0.125;             rotateSpeed:0.25;             minDistance:3;             maxDistance:100;             ' position='0 0 0'>
+    </a-entity>
+
+    <a-entity gltf-model='#candle' id='target' position='0 0 -7.6' scale='2 2 2'/>
+
+  </a-scene>
+</div>
+  
+</body>
+
+</html>
